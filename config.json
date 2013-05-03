@@ -1,0 +1,42 @@
+{
+	"author": "rishi.kapadia@mosaic.com", 
+	"config_version": "2", 
+	"description": "An empty app created by default", 
+	"modules": {
+		"contact": true, 
+		"event": true, 
+		"file": true, 
+		"is": true, 
+		"logging": {
+			"level": "DEBUG"
+		}, 
+		"media": {}, 
+		"package_names": {
+			"ios": "com.mosaic.library-app"
+		}, 
+		"prefs": true, 
+		"reload": true, 
+		"request": {
+			"permissions": [
+				"https://rkap7-mosaic.fwd.wf/*"
+			]
+		}, 
+		"tabbar": true, 
+		"tabs": true, 
+		"tools": true, 
+		"topbar": true, 
+		"ui": true
+	}, 
+	"name": "library", 
+	"partners": {
+		"parse": {
+			"applicationId": "GPRsaPH25QbByc9V4e0vlFrfVS9tB2t6l3TpBSZj", 
+			"clientKey": "4EQ8dMob1HnJb9bOQ5N8AxJdiAjCsUPPKQwub1Gn"
+		}
+	}, 
+	"platform_version": "v1.4", 
+	"trusted_urls": [
+		"http://rkap7-mosaic.fwd.wf/*"
+	], 
+	"version": "0.1"
+}

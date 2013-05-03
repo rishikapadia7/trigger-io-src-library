@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Library</title>
+    <link href="../css/application.css" media="all" rel="stylesheet" type="text/css" />
+    <script src="https://trigger.io/catalyst/target/target-script-min.js#431AE6D4-0B33-43D8-B18F-90644667D89F"></script>
+    <script src="../js/jquery.min.js" type="text/javascript"></script>
+    <script src="../js/jquery_ujs.js" type="text/javascript"></script>
+    <script src="../js/application.js" type="text/javascript"></script>
+    <script src="../js/transactions.js" type="text/javascript"></script>
+    
+    
+    
+    
+  </head>
+  <body>
+    
+    <form accept-charset="UTF-8" action="" class="new_transaction" method="post">
+      
+
+
+      <h4>Select Patron</h4>
+      
+      <div class='field' id='patrons'>
+
+    </div>
+    <h4>Select Book(s)</h4>
+    <div class='field' id='books'>
+
+    </div>
+
+    <div class='field'>
+    <label for="transaction_checkout_date">Checkout date</label>
+        <input type="datetime" name="checkout_date" id="checkout_date">
+    </div>
+
+    <div class='actions'>
+        <input name="commit" type="submit" value="Checkout" />
+    </div>
+  </form>
+<br>
+<a href="index.html">Back</a>
+<br>
+<h4>Currently Checked Out</h4>
+  <div id='checked-out'>
+  </div>
+  </body>
+</html>
