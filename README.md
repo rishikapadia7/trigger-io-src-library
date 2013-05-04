@@ -4,10 +4,20 @@ This repository includes the src/ files of a Trigger.io application built as par
 
 The App developed is a sample Library application that demonstrates CRUD functionalitity, along with making use of Trigger.io's API to access native controls such as Push Notifications, native top-bar and tab-bar, and a native date-time picker.
 
+The original intent of this App when being developed at Mosaic was a proof-of-concept to indicate that Trigger.io is a viable option for mobile app development using web technologies.
+
+
 ## How does the Library Application work?
+The user of this App is the Library manager who is able to add, view, update, and remove Books and Patrons.  When a book is added, the Patron (once added as well) would be able to checkout the book or multiple books if many books exist.  Once a book is checked out, it can be checked in and it becomes immediately available for checkout again.
 
+## How to Use
+- Setup a Trigger.io account and create a new project and app within it
+- Inside the created Trigger.io application, clone the files inside this repo to be inside the src/ folder
+- Make sure the identity.json created before is still present in the src/ directory as it is differet for everyone
+- Inside application.js and config.json, there are URLs representing a temporary server, these can be changed to access your own library server or the URL of the Rails app that I may deploy in the future.
+- Run the Trigger.io app on your Android/iOS device or simulator to test
 
-TODO:
--make master branch make use of the HTML pages and AJAX requests
--make separate branch called "browser"
--Add appropriate license for code
+## Possible Future Expansion:
+- Multiple users for the app (right now only supports one user for test purposes)
+- Support for Facebook and Google Authentication
+- Adding collaborators to personal library for library management
