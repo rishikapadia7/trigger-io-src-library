@@ -17,6 +17,7 @@ if (folderPath == 'src/index.html') {
   root = '../';
 }
 
+
 function capitaliseFirstLetter(string)
 {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -29,88 +30,92 @@ $(function () {
   if (folderPath == 'src/index.html') {
     //Set topbar title
     forge.topbar.setTitle('Home');
-
-    forge.topbar.setTint([84,34,219,230]);
-  
-    forge.tabbar.removeButtons();
-    
-    //create tabbar
-    forge.tabbar.addButton({
-      icon: "img/home.jpg",
-      text: "Home",
-      index: 0
-    }, function (button) {
-
-      button.onPressed.addListener(function () {
-        button.setActive();
-        window.location = root + 'index.html';
-      });
-    });
-
-    forge.tabbar.addButton({
-      icon: "img/books.png",
-      text: "Books",
-      index: 1
-    }, function (button) {
-
-      button.onPressed.addListener(function () {
-        window.location = root + 'books/index.html';
-        button.setActive();
-      });
-    });
-
-    forge.tabbar.addButton({
-      icon: "img/patron.png",
-      text: "Patrons",
-      index: 2
-    }, function (button) {
-
-      button.onPressed.addListener(function () {
-        button.setActive();
-        window.location = root + 'patrons/index.html';
-      });
-    });
-
-    forge.tabbar.addButton({
-      icon: "img/checkout.png",
-      text: "Checkout",
-      index: 3
-    }, function (button) {
-
-      button.onPressed.addListener(function () {
-        button.setActive();
-        window.location = root + 'transactions/checkout.html';
-      });
-    });
-
-    forge.tabbar.addButton({
-      icon: "img/checkin.png",
-      text: "Checkin",
-      index: 4
-    }, function (button) {
-
-      button.onPressed.addListener(function () {
-        button.setActive();
-        window.location = root + 'transactions/checkin.html';
-      });
-    });
-
-
-    forge.tabbar.addButton({
-      icon: "img/history.png",
-      text: "History",
-      index: 5
-    }, function (button) {
-
-      button.onPressed.addListener(function () {
-        button.setActive();
-        window.location = root + 'transactions/index.html';
-      });
-    });
-
-    forge.tabbar.setTint([84,34,219,230]);
-    forge.tabbar.setActiveTint([220,78,90,255]);
   }
+
+  forge.topbar.setTint([84,34,219,230]);
+  
+  forge.tabbar.removeButtons();
+//create tabbar
+  forge.tabbar.addButton({
+    icon: "img/home.jpg",
+    text: "Home",
+    index: 0
+  }, function (button) {
+
+    button.onPressed.addListener(function () {     
+      window.location = root + 'index.html';
+      button.setActive();
+    });
+  });
+
+  forge.tabbar.addButton({
+    icon: "img/books.png",
+    text: "Books",
+    index: 1
+  }, function (button) {
+
+    button.onPressed.addListener(function () {     
+      window.location = baseUrl + 'books';
+      button.setActive();
+    });
+  });
+
+  forge.tabbar.addButton({
+    icon: "img/patron.png",
+    text: "Patrons",
+    index: 2
+  }, function (button) {
+
+    button.onPressed.addListener(function () {     
+      
+      window.location = baseUrl + 'patrons';
+      button.setActive();
+    });
+  });
+
+  forge.tabbar.addButton({
+    icon: "img/checkout.png",
+    text: "Checkout",
+    index: 3
+  }, function (button) {
+
+    button.onPressed.addListener(function () {     
+      
+      window.location = baseUrl + 'checkout';
+      button.setActive();
+    });
+  });
+
+  forge.tabbar.addButton({
+    icon: "img/checkin.png",
+    text: "Checkin",
+    index: 4
+  }, function (button) {
+
+    button.onPressed.addListener(function () {     
+      
+      window.location = baseUrl + 'checkin';
+      button.setActive();
+    });
+  });
+
+
+  forge.tabbar.addButton({
+    icon: "img/history.png",
+    text: "History",
+    index: 5
+  }, function (button) {
+
+    button.onPressed.addListener(function () {     
+      
+      window.location = baseUrl + 'history';
+      button.setActive();
+    });
+  });
+
+  forge.tabbar.setTint([84,34,219,230]);
+  forge.tabbar.setActiveTint([220,78,90,255]);
+
 });
 
 forge.event.messagePushed.addListener(function (data) {
@@ -160,6 +165,8 @@ var config = {
 };
 
 var pushChannel = 'recipients';
+
+
 
 $(function() {
 
