@@ -1,5 +1,5 @@
 ## What is it?
-This repository includes the src/ files of a Trigger.io application built as part of my first coop-term at Mosaic.  Trigger.io is a service and framework for writing hybrid mobile applications in HTML, CSS, and Javascript and then using the code inside a web-wrapper on a mobile device.  For more details visit:
+This repository includes the src/ files of a Trigger.io application that I built as part of my first coop-term at Mosaic.  Trigger.io is a service and framework for writing hybrid mobile applications in HTML, CSS, and Javascript and then using the code inside a web-wrapper on a mobile device.  For more details visit:
 [Trigger.io website](https://trigger.io/how-it-works/)
 
 The App developed is a sample Library application that demonstrates CRUD functionalitity, along with making use of Trigger.io's API to access native controls such as Push Notifications, native top-bar and tab-bar, and a native date-time picker.
@@ -8,7 +8,7 @@ The original intent of this App when being developed at Mosaic was a proof-of-co
 
 
 ## How does the Library Application work?
-The user of this App is the Library manager who is able to add, view, update, and remove Books and Patrons.  When a book is added, the Patron (once added as well) would be able to checkout the book or multiple books if many books exist.  Once a book is checked out, it can be checked in and it becomes immediately available for checkout again.
+The user of this App is the Library manager who is able to add, view, update, and remove Books and Patrons.  When a book is added, the Patron (once added as well) would be able to checkout a book or multiple books if many books exist.  Once a book is checked out, it can be checked in and it becomes immediately available for checkout again.
 
 ## How to Use
 - Setup a Trigger.io account and create a new project and app within it

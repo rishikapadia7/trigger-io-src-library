@@ -5,11 +5,9 @@ var filePath = window.location.pathname.split('/');
 var n = filePath.length;
 var folderPath = filePath[n - 2].toString() + '/' + filePath[n - 1].toString();
 
-if (filePath[n - 2].toString() + '/' + filePath[n - 1].toString() == 'src/index.html') {
+if (folderPath == 'src/index.html') {
   root = '';
-  //Set topbar title
-  forge.topbar.setTitle('Home');
-
+  
   //Set an initial notificationPath for listener
   var randomTime = '' + new Date().getTime();
   forge.prefs.set('notifTime', randomTime,
@@ -18,7 +16,6 @@ if (filePath[n - 2].toString() + '/' + filePath[n - 1].toString() == 'src/index.
 } else {
   root = '../';
 }
-
 
 function capitaliseFirstLetter(string)
 {
@@ -31,92 +28,89 @@ $(function () {
   //TOPBAR configurations
   if (folderPath == 'src/index.html') {
     //Set topbar title
-  }
+    forge.topbar.setTitle('Home');
 
-  forge.topbar.setTint([84,34,219,230]);
+    forge.topbar.setTint([84,34,219,230]);
   
-  forge.tabbar.removeButtons();
-//create tabbar
-  forge.tabbar.addButton({
-    icon: "img/home.jpg",
-    text: "Home",
-    index: 0
-  }, function (button) {
+    forge.tabbar.removeButtons();
+    
+    //create tabbar
+    forge.tabbar.addButton({
+      icon: "img/home.jpg",
+      text: "Home",
+      index: 0
+    }, function (button) {
 
-    button.onPressed.addListener(function () {     
-      window.location = root + 'index.html';
-      button.setActive();
+      button.onPressed.addListener(function () {
+        button.setActive();
+        window.location = root + 'index.html';
+      });
     });
-  });
 
-  forge.tabbar.addButton({
-    icon: "img/books.png",
-    text: "Books",
-    index: 1
-  }, function (button) {
+    forge.tabbar.addButton({
+      icon: "img/books.png",
+      text: "Books",
+      index: 1
+    }, function (button) {
 
-    button.onPressed.addListener(function () {     
-      forge.tabs.open( baseUrl + 'books')
-      button.setActive();
+      button.onPressed.addListener(function () {
+        window.location = root + 'books/index.html';
+        button.setActive();
+      });
     });
-  });
 
-  forge.tabbar.addButton({
-    icon: "img/patron.png",
-    text: "Patrons",
-    index: 2
-  }, function (button) {
+    forge.tabbar.addButton({
+      icon: "img/patron.png",
+      text: "Patrons",
+      index: 2
+    }, function (button) {
 
-    button.onPressed.addListener(function () {     
-      
-      window.location = baseUrl + 'patrons';
-      button.setActive();
+      button.onPressed.addListener(function () {
+        button.setActive();
+        window.location = root + 'patrons/index.html';
+      });
     });
-  });
 
-  forge.tabbar.addButton({
-    icon: "img/checkout.png",
-    text: "Checkout",
-    index: 3
-  }, function (button) {
+    forge.tabbar.addButton({
+      icon: "img/checkout.png",
+      text: "Checkout",
+      index: 3
+    }, function (button) {
 
-    button.onPressed.addListener(function () {     
-      
-      forge.tabs.open( baseUrl + 'checkout')
-      button.setActive();
+      button.onPressed.addListener(function () {
+        button.setActive();
+        window.location = root + 'transactions/checkout.html';
+      });
     });
-  });
 
-  forge.tabbar.addButton({
-    icon: "img/checkin.png",
-    text: "Checkin",
-    index: 4
-  }, function (button) {
+    forge.tabbar.addButton({
+      icon: "img/checkin.png",
+      text: "Checkin",
+      index: 4
+    }, function (button) {
 
-    button.onPressed.addListener(function () {     
-      
-      window.location = baseUrl + 'checkin';
-      button.setActive();
+      button.onPressed.addListener(function () {
+        button.setActive();
+        window.location = root + 'transactions/checkin.html';
+      });
     });
-  });
 
 
-  forge.tabbar.addButton({
-    icon: "img/history.png",
-    text: "History",
-    index: 5
-  }, function (button) {
+    forge.tabbar.addButton({
+      icon: "img/history.png",
+      text: "History",
+      index: 5
+    }, function (button) {
 
-    button.onPressed.addListener(function () {     
-      
-      window.location = baseUrl + 'history';
-      button.setActive();
+      button.onPressed.addListener(function () {
+        button.setActive();
+        window.location = root + 'transactions/index.html';
+      });
     });
-  });
 
-  forge.tabbar.setTint([84,34,219,230]);
-  forge.tabbar.setActiveTint([220,78,90,255]);
-
+    forge.tabbar.setTint([84,34,219,230]);
+    forge.tabbar.setActiveTint([220,78,90,255]);
+  }
 });
 
 forge.event.messagePushed.addListener(function (data) {
@@ -167,8 +161,6 @@ var config = {
 
 var pushChannel = 'recipients';
 
-
-
 $(function() {
 
     forge.partners.parse.push.subscribe(pushChannel,
@@ -181,12 +173,9 @@ $(function() {
     );
 });
 
-
-
 var removal = function(elem) {
   $(elem).remove();
 };
-
 
 var sendPush = function(msg, notificationPath) {
   var randomTime = '' + new Date().getTime();
