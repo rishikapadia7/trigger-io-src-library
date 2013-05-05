@@ -10,6 +10,8 @@ The original intent of this App when being developed at Mosaic was a proof-of-co
 ## How does the Library Application work?
 The user of this App is the Library manager who is able to add, view, update, and remove Books and Patrons.  When a book is added, the Patron (once added as well) would be able to checkout a book or multiple books if many books exist.  Once a book is checked out, it can be checked in and it becomes immediately available for checkout again.
 
+The browsing branch includes in-app browsing functionality which is for the purpose of using an existing mobile website and browsing on that website yet still make use of native functionality.  This would avoid the need of making AJAX requests and fetching JSON and parsing it to display it in the app.  NOTE: this feature will only work with a Trigger.io paid account and currently this app is not configured to use it.
+
 ## How to Use
 - Setup a Trigger.io account and create a new project and app within it
 - Inside the created Trigger.io application, clone the files inside this repo to be inside the src/ folder
